@@ -1,10 +1,9 @@
 import React, {useState} from "react";
 
 
-function SearchBar() {
+function SearchBar(props) {
 
     const [newLink, setNewLink] = useState("");
-    const [logCode, setLogCode] = useState("");
 
 
 
@@ -13,9 +12,7 @@ function SearchBar() {
     }
 
     function handleClick(event) {
-        const codeStr = newLink.split("/");
-        setLogCode(codeStr[codeStr.length - 2]);
-        console.log(logCode);
+        props.getLogCode(newLink)
         event.preventDefault();
     }
 
