@@ -1,0 +1,15 @@
+header {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+    margin: 10% 0;
+}
+
+input {
+    height: 20px;
+    width: 350px;
+    margin-right: 10px;
+}
+
