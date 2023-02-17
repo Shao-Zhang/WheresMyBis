@@ -1,19 +1,19 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import SearchBar from "./SearchBar";
 import Header from "./Header";
 import getAccessToken from "../tokenService";
+import queryFights from "../query"
 
 
 function App() {
-    getAccessToken()
-    const [logCode, setLogCode] = useState("");
+    // const [logCode, setLogCode] = useState("");
+    const [bossesKilled, setBossesKilled] = useState(["boss1"])
 
-    function parseLogLink(link) {
+    async function parseLogLink(link) {
         const splitStr = link.split("/");
-        setLogCode(splitStr[splitStr.length - 2])
+        await getAccessToken();
+        let fights = await queryFights(splitStr[splitStr.length - 2]);
     }
-
-    
 
     return (
         <div>
