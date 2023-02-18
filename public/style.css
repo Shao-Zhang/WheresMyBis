@@ -4,6 +4,7 @@ body {
 
 h2 {
     clear: left;
+    padding-top: 5%;
 }
 
 form {
@@ -18,7 +19,7 @@ input {
 }
 
 .card-container {
-    margin-left: 8%;
+    margin: 0% 0% 10% 8%;
 }
 
 .boss-card {

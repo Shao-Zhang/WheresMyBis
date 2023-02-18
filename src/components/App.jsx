@@ -3,11 +3,10 @@ import SearchBar from "./SearchBar";
 import Header from "./Header";
 import getAccessToken from "../tokenService";
 import queryFights from "../query";
-import DisplayCard from "../components/Card";
+import DisplayCard from "./Card";
 
 
 function App() {
-    // const [logCode, setLogCode] = useState("");
 
     // const [bossesLeft, setBossesLeft] = useState(["Flame Leviathan",
     //     "Ignis the Furnace Master", "Razorscale", "XT-002 Deconstructor",
@@ -21,7 +20,7 @@ function App() {
         bossesLeft: ["Flame Leviathan",
             "Ignis the Furnace Master", "Razorscale", "XT-002 Deconstructor",
             "The Assembly of Iron", "Kologarn", "Auriaya", "Hodir", "Thorim",
-            "Freya", "Mimiron", "General Vezax", "Yogg-Saron"]
+            "Freya", "Mimiron", "General Vezax", "Yogg-Saron", "Algalon the Observer"]
     })
 
 
@@ -50,27 +49,23 @@ function App() {
             })
 
         })
-        // setBossesLeft((prevArray) => {
-        //     let newArray = prevArray.filter(name => !bossesKilled.includes(name))
-        //     console.log(newArray)
-        //     return newArray
-        // })
     }
 
 
     return (
         <div>
             <Header />
+            <img src="../images/the-assembly-of-iron.gif" alt="" />
             <SearchBar getLogCode={parseLogLink} />
             <h2>Upcoming Bosses</h2>
             <div className="card-container">
-                {raidState.bossesLeft?.map((boss) => {
+                {raidState.bossesLeft.map((boss) => {
                     return <DisplayCard key={boss} name={boss} class="boss-card" />
                 })}
             </div>
             <h2>Bosses Killed</h2>
             <div className="card-container">
-                {raidState.bossesKilled?.map((boss) => {
+                {raidState.bossesKilled.map((boss) => {
                     return <DisplayCard key={boss} name={boss} class="boss-card" />
                 })}
             </div>
