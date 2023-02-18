@@ -1,5 +1,9 @@
-header {
+body {
     text-align: center;
+}
+
+h2 {
+    clear: left;
 }
 
 form {
@@ -13,3 +17,12 @@ input {
     margin-right: 10px;
 }
 
+.card-container {
+    margin-left: 8%;
+}
+
+.boss-card {
+    float: left;
+    margin: 2% 2% 0% 0%;
+
+}
