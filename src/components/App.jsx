@@ -39,9 +39,8 @@ function App() {
     }
 
 
-    async function queryClassItem(event){
+    async function queryClassItem(event) {
         let bossDrops = await queryDataBase(event.target.name);
-        console.log(bossDrops);
         setBossDrop(bossDrops);
     }
 
@@ -54,7 +53,7 @@ function App() {
             <h2>Upcoming Bosses</h2>
             <div className="card-container">
                 {raidState.bossesLeft.map((boss) => {
-                    return <DisplayCard key={boss} name={boss} class="boss-card" drops={bossDrop[boss]} />
+                    return <DisplayCard key={boss} name={boss} class="boss-card" drops={bossDrop?.[boss]} />
                 })}
             </div>
             {/* <h2>Bosses Killed</h2>
