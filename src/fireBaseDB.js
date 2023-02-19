@@ -1,43 +1,33 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+// import { getFirestore } from "firebase/firestore";
+import { initializeFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
 
-    // apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  
-    // authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
-  
-    // projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  
-    // storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  
-    // messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  
-    // appId: process.env.REACT_APP_FIREBASE_APP_ID,
-  
-    // measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
-    apiKey: "AIzaSyAHRtsUl2Vnxq-5o3YZ2hE4k19pUN8GG88",
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
 
-    authDomain: "wheresmybis.firebaseapp.com",
+    authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
 
-    projectId: "wheresmybis",
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
 
-    storageBucket: "wheresmybis.appspot.com",
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
 
-    messagingSenderId: "956148063772",
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
 
-    appId: "1:956148063772:web:9545597484d0332ab749d9",
+    appId: process.env.REACT_APP_FIREBASE_APP_ID,
 
-    measurementId: "G-QJBDDTYT41"
-  
+    measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
+
 };
-  
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 
 // Initialize Cloud Firestore and get a reference to the service
-const db = getFirestore(app);
+const db = initializeFirestore(app, {
+    experimentalForceLongPolling: true,
+});
 
 
 export default db;
