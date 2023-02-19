@@ -29,14 +29,6 @@ function App() {
         await getAccessToken();
         // gets query of bosses killed
         let bossKill = await queryFights(splitStr[splitStr.length - 2]);
-        // setBossesKilled(() => {
-        //     let tempArray = [];
-        //     for (let boss of bossKill) {
-        //         tempArray.push(boss.name);
-        //     }
-        //     console.log("setBOssesKilled comeplete")
-        //     return tempArray;
-        // })
         setRaidState((prevState) => {
             // tempArray contains bosses killed from log
             let tempArray = [];

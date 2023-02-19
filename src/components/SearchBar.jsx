@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 
 function SearchBar(props) {
@@ -19,7 +19,7 @@ function SearchBar(props) {
 
     return (
         <form>
-            <input onChange={handleLinkChange} type="text" value={newLink}/>
+            <input onChange={handleLinkChange} type="text" value={newLink} placeholder="https://classic.warcraftlogs.com/reports/..." />
             <button onClick={handleClick}>Submit</button>
         </form>
     )
