@@ -11,7 +11,7 @@ import ListItems from './ListItem';
 export default function DisplayCard(props) {
 
     return (
-        <Card className={props.class} sx={{ minWidth: 345 }}>
+        <Card className={props.class} sx={{ minWidth: 345 }} style={{ backgroundColor: "#262625" }}>
             <CardMedia
                 component="img"
                 alt="Boss Image"
@@ -19,7 +19,7 @@ export default function DisplayCard(props) {
                 image={require("../images/" + props.name.replace(/\s+/g, '-').toLowerCase() + ".gif")}
             />
             <CardContent>
-                <Typography gutterBottom variant="h5" component="span">
+                <Typography gutterBottom variant="h5" component="span" color="#ccccc6">
                     {props.name}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" component="span">
@@ -34,7 +34,7 @@ export default function DisplayCard(props) {
                     <ListItems drops={props.drops?.[25]} type="25" />
                 </Typography>
             </CardContent>
-            {/* <CardActions>
+            {/* <CardActions>   
                 <Button size="small">See more loot</Button>
             </CardActions> */}
         </Card>

@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import Button from '@mui/material/Button'
+import LoadingButton from '@mui/lab/LoadingButton'
 
 
 function SearchBar(props) {
 
     const [newLink, setNewLink] = useState("");
+    const [loading, setLoading] = useState(false);
 
 
 
@@ -11,8 +14,12 @@ function SearchBar(props) {
         setNewLink(event.target.value);
     }
 
-    function handleClick(event) {
-        props.getLogCode(newLink)
+    async function handleClick(event) {
+        console.log("set True")
+        setLoading(true)
+        await props.getLogCode(newLink)
+        console.log("Set False")
+        setLoading(false)
         event.preventDefault();
     }
 
@@ -20,7 +27,8 @@ function SearchBar(props) {
     return (
         <form>
             <input onChange={handleLinkChange} type="text" value={newLink} placeholder="https://classic.warcraftlogs.com/reports/..." />
-            <button onClick={handleClick}>Submit</button>
+            {loading ? <LoadingButton loading variant="contained"><span>Submit</span></LoadingButton> :
+                <Button color="primary" variant="contained" onClick={handleClick}>Submit</Button>}
         </form>
     )
 }

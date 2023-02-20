@@ -42,23 +42,32 @@ function App() {
 
 
     async function queryClassItem(spec) {
-        console.log("Query "+spec)
+        console.log("Query " + spec)
         let bossDrops = await queryDataBase(spec);
         setBossDrop(bossDrops);
     }
 
 
     return (
-        <>
+        <div>
             <Header />
-            <SearchBar getLogCode={parseLogLink} />
-            {/* <button className="class-button" type="button" onClick={queryClassItem}><img src={require("../images/demoLock-icon.jpg")} alt="" name="DemonologyWarlock" /> </button> */}
-            <DropDown querySpec={queryClassItem}/>
-            <h2>Upcoming Bosses</h2>
-            <div className="card-container">
-                {raidState.bossesLeft.map((boss) => {
-                    return <DisplayCard class="boss-card" key={boss} name={boss} drops={bossDrop?.[boss]} />
-                })}
+            <div className="section-container">
+                <h2>Search WarcraftLogs to track bosses killed! </h2>
+                <SearchBar getLogCode={parseLogLink} />
+            </div>
+
+            <div className="section-container">
+                <h2>Select your spec to see loot!</h2>
+                <DropDown querySpec={queryClassItem} />
+                {/* </div>
+
+            <div className="section-container"> */}
+                {/* <h2>Upcoming Bosses</h2> */}
+                <div className="card-container">
+                    {raidState.bossesLeft.map((boss) => {
+                        return <DisplayCard class="boss-card" key={boss} name={boss} drops={bossDrop?.[boss]} />
+                    })}
+                </div>
             </div>
             {/* <h2>Bosses Killed</h2>
             <div className="card-container">
@@ -67,7 +76,7 @@ function App() {
                 })}
             </div> */}
 
-        </>
+        </div>
     )
 }
 

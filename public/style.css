@@ -1,29 +1,35 @@
 body {
     text-align: center;
-    background-color: darkgray;
+    background-color: #262625;
+}
+
+h1,
+h2,
+h3 {
+    color: #ccccc6;
 }
 
 h2 {
     clear: left;
-    margin: 0% auto 0% auto;
+    padding: 5px 0% 5px 0%;
 }
 
-form {
-    text-align: center;
-    margin: 5% auto 5% auto;
+.section-container {
+    background-color: #52524a;
+    border: 1px solid black;
+    margin: 2% auto 2% auto;
+    padding: 0% 0% 1% 0%;
 }
+
 
 input {
-    height: 20px;
-    width: 350px;
+    height: 32px;
+    width: 500px;
     margin-right: 10px;
 }
 
-.class-button {
-    border: solid 1px white;
-    cursor: pointer;
-    appearance: none;
-    background-color: inherit;
+.spec-dropdown-container {
+    padding-bottom: 5%;
 }
 
 .class-button:hover {
@@ -48,3 +54,6 @@ input {
     text-decoration: none;
 }
 
+.loot {
+    margin-bottom: 10px;
+}
