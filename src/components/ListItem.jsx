@@ -28,7 +28,7 @@ function ListItems(props) {
                 let [id, name] = item.split("/")
                 itemObj.id = id;
                 itemObj.name = name;
-                return <a key={item.name} href="" data-wowhead={"https://www.wowhead.com/wotlk/item=" + itemObj.id} >{itemObj.name}</a>
+                return <a key={item.name} href={"https://www.wowhead.com/wotlk/item=" + itemObj.id} data-wowhead={"item=" + itemObj.id} >{itemObj.name}</a>
             })}
         </div>
 
