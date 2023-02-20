@@ -30,6 +30,7 @@ function DropDown(props) {
             >
             <MenuItem value="DemonologyWarlock">Demonology Warlock</MenuItem>
             <MenuItem value="AfflictionWarlock">Affliction Warlock</MenuItem>
+            <MenuItem value="FireMage">Fire Mage</MenuItem>
             </Select>
         </FormControl>
     </div>

@@ -9,8 +9,14 @@ async function queryFights(logCode) {
         {query:queryString},
         {headers: {"Authorization": "Bearer " + sessionStorage.getItem("accessToken")}}
     )
-    console.log(res.data.data.reportData.report.fights)
-    return res.data.data.reportData.report.fights
+    console.log(res)
+    console.log(res.data.errors)
+    if (res.data.errors){
+        alert("Error in provided log link");
+        return []
+    } else {
+        return res.data.data.reportData.report.fights
+    }
 }
 
 export default queryFights;
