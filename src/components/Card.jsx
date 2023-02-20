@@ -34,9 +34,9 @@ export default function DisplayCard(props) {
                     <ListItems drops={props.drops?.[25]} type="25" />
                 </Typography>
             </CardContent>
-            <CardActions>
+            {/* <CardActions>
                 <Button size="small">See more loot</Button>
-            </CardActions>
+            </CardActions> */}
         </Card>
     );
 }

@@ -4,18 +4,29 @@ body {
 
 h2 {
     clear: left;
-    padding-top: 5%;
+    margin: 0% auto 0% auto;
 }
 
 form {
     text-align: center;
-    margin: 10% 0;
+    margin: 5% auto 5% auto;
 }
 
 input {
     height: 20px;
     width: 350px;
     margin-right: 10px;
+}
+
+.class-button {
+    border: solid 1px white;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+}
+
+.class-button:hover {
+    border: solid 1px red;
 }
 
 .card-container {
@@ -30,3 +41,9 @@ input {
     margin: 2% 2% 0% 0%;
 
 }
+
+.loot {
+    color: #a335ee;
+    text-decoration: none;
+}
+

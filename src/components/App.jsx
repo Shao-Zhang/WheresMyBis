@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 import Header from "./Header";
+import DropDown from "./DropDownMenu";
 import getAccessToken from "../tokenService";
 import queryFights from "../query";
 import DisplayCard from "./Card";
 import queryDataBase from "../queryDB";
+
 
 
 function App() {
@@ -39,8 +41,9 @@ function App() {
     }
 
 
-    async function queryClassItem(event) {
-        let bossDrops = await queryDataBase(event.target.name);
+    async function queryClassItem(spec) {
+        console.log("Query "+spec)
+        let bossDrops = await queryDataBase(spec);
         setBossDrop(bossDrops);
     }
 
@@ -49,11 +52,12 @@ function App() {
         <>
             <Header />
             <SearchBar getLogCode={parseLogLink} />
-            <button onClick={queryClassItem}><img src={require("../images/demoLock-icon.jpg")} alt="" name="DemonologyWarlock" /> </button>
+            {/* <button className="class-button" type="button" onClick={queryClassItem}><img src={require("../images/demoLock-icon.jpg")} alt="" name="DemonologyWarlock" /> </button> */}
+            <DropDown querySpec={queryClassItem}/>
             <h2>Upcoming Bosses</h2>
             <div className="card-container">
                 {raidState.bossesLeft.map((boss) => {
-                    return <DisplayCard key={boss} name={boss} class="boss-card" drops={bossDrop?.[boss]} />
+                    return <DisplayCard class="boss-card" key={boss} name={boss} drops={bossDrop?.[boss]} />
                 })}
             </div>
             {/* <h2>Bosses Killed</h2>
