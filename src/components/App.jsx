@@ -51,10 +51,10 @@ function App() {
     return (
         <div>
             <Header />
-            <div className="section-container">
-                <h2>Search WarcraftLogs to track bosses killed! </h2>
-                <SearchBar getLogCode={parseLogLink} />
-            </div>
+            {/* <div className="section-container"> */}
+            <h2>Search WarcraftLogs to track bosses killed! </h2>
+            <SearchBar getLogCode={parseLogLink} />
+            {/* </div> */}
 
             <div className="section-container">
                 <h2>Select your spec to see loot!</h2>
