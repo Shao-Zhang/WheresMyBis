@@ -9,8 +9,7 @@ async function queryFights(logCode) {
         {query:queryString},
         {headers: {"Authorization": "Bearer " + sessionStorage.getItem("accessToken")}}
     )
-    console.log(res)
-    console.log(res.data.errors)
+
     if (res.data.errors){
         alert("Error in provided log link");
         return []

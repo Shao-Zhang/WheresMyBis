@@ -15,10 +15,8 @@ function SearchBar(props) {
     }
 
     async function handleClick(event) {
-        console.log("set True")
         setLoading(true)
         await props.getLogCode(newLink)
-        console.log("Set False")
         setLoading(false)
         event.preventDefault();
     }
@@ -27,7 +25,7 @@ function SearchBar(props) {
     return (
         <form>
             <input onChange={handleLinkChange} type="text" value={newLink} placeholder="https://classic.warcraftlogs.com/reports/..." />
-            {loading ? <LoadingButton loading variant="contained"><span>Submit</span></LoadingButton> :
+            {loading ? <LoadingButton loading variant="contained" color="primary"></LoadingButton> :
                 <Button color="primary" variant="contained" onClick={handleClick}>Submit</Button>}
         </form>
     )
