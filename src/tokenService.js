@@ -15,7 +15,7 @@ async function getAccessToken() {
             data: {
                 "grant_type":"client_credentials"
             }
-        }).then()
+        })
         sessionStorage.setItem("accessToken", res.data.access_token)
     }
 }
