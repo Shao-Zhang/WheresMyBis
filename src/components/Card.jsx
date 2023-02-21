@@ -23,20 +23,12 @@ export default function DisplayCard(props) {
                     {props.name}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" component="span">
-                    {/* props.drops.10.map((item)=>{
-                        <NewComponent itemString = item />
-                    })
-                    props.drops.10.hard.map((item)=>{
-                        <NewComponent itemString = item />
-                    }) */}
-                    {/* create another component and give it props.drops.10 to filter between 10 and 25 man} */}
+                    
                     <ListItems drops={props.drops?.[10]} type="10" />
                     <ListItems drops={props.drops?.[25]} type="25" />
                 </Typography>
             </CardContent>
-            {/* <CardActions>   
-                <Button size="small">See more loot</Button>
-            </CardActions> */}
+           
         </Card>
     );
 }

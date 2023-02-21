@@ -51,30 +51,22 @@ function App() {
     return (
         <div>
             <Header />
-            {/* <div className="section-container"> */}
+     
             <h2>Search WarcraftLogs to track bosses killed! </h2>
             <SearchBar getLogCode={parseLogLink} />
-            {/* </div> */}
+         
 
             <div className="section-container">
                 <h2>Select your spec to see loot!</h2>
                 <DropDown querySpec={queryClassItem} />
-                {/* </div>
+         
 
-            <div className="section-container"> */}
-                {/* <h2>Upcoming Bosses</h2> */}
                 <div className="card-container">
                     {raidState.bossesLeft.map((boss) => {
                         return <DisplayCard class="boss-card" key={boss} name={boss} drops={bossDrop?.[boss]} />
                     })}
                 </div>
             </div>
-            {/* <h2>Bosses Killed</h2>
-            <div className="card-container">
-                {raidState.bossesKilled.map((boss) => {
-                    return <DisplayCard key={boss} name={boss} class="boss-card" drops={bossDrop[boss]} />
-                })}
-            </div> */}
 
         </div>
     )
