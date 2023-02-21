@@ -3,7 +3,6 @@ import axios from "axios";
 
 async function getAccessToken() {
     if (sessionStorage.getItem("accessToken") !== null){
-        console.log("token exists "+ sessionStorage.getItem("accessToken"));
     } else {
         let res = await axios.request({
             url: "https://www.warcraftlogs.com/oauth/token",

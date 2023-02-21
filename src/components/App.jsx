@@ -42,7 +42,7 @@ function App() {
 
 
     async function queryClassItem(spec) {
-        console.log("Query " + spec)
+
         let bossDrops = await queryDataBase(spec);
         setBossDrop(bossDrops);
     }
